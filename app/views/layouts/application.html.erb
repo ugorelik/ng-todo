@@ -34,7 +34,7 @@
     <!-- Size should be 32 x 32 pixels -->
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
   </head>
-  <body>
+  <body ng-app="UgModule" ng-cloak>
 
     <div class="navbar navbar-fluid-top">
       <div class="navbar-inner">
@@ -75,5 +75,25 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "application" %>
 
+
+    <% if Rails.env.development? %>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-resource.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-cookies.js"></script>
+      <%= javascript_include_tag 'ui-bootstrap-0.3.0' %>
+    <% else %>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-resource.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-cookies.min.js"></script>
+      <%= javascript_include_tag 'ui-bootstrap-0.3.0-min' %>
+    <% end %>
+
+    <%= javascript_include_tag 'angular-ui.min' %>
+
+    
+
+    <%= javascript_include_tag 'angular/_ng_module' %>
+    <%= yield :angular %>
+    <%= yield :scripts %>
   </body>
 </html>
