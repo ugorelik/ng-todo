@@ -1,3 +1,5 @@
 NgTodo::Application.routes.draw do
-  root to: 'todos#index'
+  root to: 'pages#show'
+  resources :todos
+  resource :pages, only: :show
 end

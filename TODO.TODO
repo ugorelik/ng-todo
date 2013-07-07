@@ -1,0 +1,15 @@
+Project Build:
+
+  ☐ Show incomplete/complete todos
+  ☐ Create the form
+  ☐ Create todo_ctrl.js
+     1. Inject http
+     2. Check for id
+     3. Reset new_Todo
+  ☐ Edit
+  ☐ Complete
+    $scope.incompleteTodos.splice(index,1);
+  ☐ Markdown support
+
+ Presentation:
+ ☐ Add create method to starting (take out only)

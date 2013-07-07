@@ -1,0 +1,34 @@
+<% content_for :angular do %>
+  <%= javascript_include_tag 'angular/controllers/test_ctrl' %>
+  <%= javascript_include_tag 'angular/controllers/todo_ctrl' %>
+<% end %>
+
+<div ng-controller="TodoCtrl">
+  <div class="span2">
+    <h1>Create a new todo</h1>
+    <%= render 'todos/form' %>
+  </div>
+
+  <div class="span5">
+
+    <h2>Your current todos</h2>
+    <div class="todos">
+      <div class="todo" ng-repeat="todo in incompleteTodos">
+        <h3>{{todo.title}}</h3>
+        <p ng-bind-html-unsafe="todo.content"></p>
+        <button class="btn" ng-click="editTodo(todo)">Edit</button>
+        <button class="btn" ng-click="completeTodo(todo, $index)">Complete!</button>
+        
+      </div>
+    </div>
+  </div>
+  <div class="span5">
+    <h2>Your completed todos</h2>
+    <div class="todos">
+      <div class="todo" ng-repeat="todo in completeTodos">
+        <h3>{{todo.title}}</h3>
+        <p ng-bind-html-unsafe="todo.content"></p>
+      </div>
+    </div>
+  </div>
+</div>
