@@ -18,24 +18,26 @@ Enter a **title** and a body for your todo. Once it's complete hit the *complete
   <div class="span4">
 
     <h2>Your current todos</h2>
-    <div class="todos">
-      <div class="todo" ng-repeat="todo in incompleteTodos">
-        <h3>{{todo.title}}</h3>
-        <div ng-bind-html-unsafe="todo.content|markdown"></div>
-        <button class="btn" ng-click="editTodo(todo)">Edit</button>
-        <button class="btn" ng-click="completeTodo(todo, $index)">Complete!</button>
-      </div>
-    </div>
+    <ul class="todos">
+      <li class="todo clearfix" ng-repeat="todo in incompleteTodos" ug-hover>
+        <div class="label">{{todo.label}}</div>
+        <div class="content" ng-bind-html-unsafe="todo.content|markdown"></div>
+        <div class="actions">
+          <a href="#" ng-click="editTodo(todo)">edit</a> |
+          <a href="#" ng-click="completeTodo(todo, $index)">done</a>
+        </div>
+      </li>
+    </ul>
   </div>
 
   <div class="span4">
     <h2>Your completed todos</h2>
-    <div class="todos">
-      <div class="todo" ng-repeat="todo in completeTodos">
-        <h3>{{todo.title}}</h3>
-        <div ng-bind-html-unsafe="todo.content|markdown"></div>
-      </div>
-    </div>
+    <ul class="todos">
+      <li class="todo clearfix" ng-class="{complete: todo.is_complete}" ng-repeat="todo in completeTodos" ug-hover>
+        <div class="label">{{todo.label}}</div>
+        <div class="content" ng-bind-html-unsafe="todo.content|markdown"></div>
+      </li>
+    </ul>
   </div>
 
 </div>

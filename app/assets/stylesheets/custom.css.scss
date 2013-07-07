@@ -1,0 +1,18 @@
+
+li.todo {
+  list-style: none;
+
+  .label, .content {
+    float:left;
+    margin-right: 15px
+  }
+  .actions {
+    float:right;
+  }
+}
+
+li.complete {
+  color:#aaa;
+  p {text-decoration: line-through;}
+  
+}
