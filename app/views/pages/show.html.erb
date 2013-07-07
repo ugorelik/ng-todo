@@ -1,43 +1,7 @@
 <% content_for :angular do %>
-  <%= javascript_include_tag 'markdown' %>
-  <%= javascript_include_tag 'angular/controllers/test_ctrl' %>
   <%= javascript_include_tag 'angular/controllers/todo_ctrl' %>
 <% end %>
 
 <div ng-controller="TodoCtrl">
-
-  <div class="span2">
-    <markdown>
-## Create a new todo
-Enter a **title** and a body for your todo. Once it's complete hit the *complete* button!
-    </markdown>
-
-    <%= render 'todos/form' %>
-  </div>
-
-  <div class="span4">
-
-    <h2>Your current todos</h2>
-    <ul class="todos">
-      <li class="todo clearfix" ng-repeat="todo in incompleteTodos" ug-hover>
-        <div class="label">{{todo.label}}</div>
-        <div class="content" ng-bind-html-unsafe="todo.content|markdown"></div>
-        <div class="actions">
-          <a href="#" ng-click="editTodo(todo)">edit</a> |
-          <a href="#" ng-click="completeTodo(todo, $index)">done</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-
-  <div class="span4">
-    <h2>Your completed todos</h2>
-    <ul class="todos">
-      <li class="todo clearfix" ng-class="{complete: todo.is_complete}" ng-repeat="todo in completeTodos" ug-hover>
-        <div class="label">{{todo.label}}</div>
-        <div class="content" ng-bind-html-unsafe="todo.content|markdown"></div>
-      </li>
-    </ul>
-  </div>
 
 </div>
