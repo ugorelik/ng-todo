@@ -10,6 +10,11 @@ Project Build:
   ☐ Complete
     $scope.incompleteTodos.splice(index,1);
   ☐ Markdown support
+    Filter: Just returns a function
+    Directive: for markdown (no white space)
+
 
  Presentation:
- ☐ Add create method to starting (take out only)
+ ☐ Core
+ ☐ Filters
+ ☐ Directives
