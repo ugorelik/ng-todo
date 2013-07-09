@@ -21,10 +21,10 @@ Enter a **title** and a body for your todo. Once it's complete hit the *complete
     <ul class="todos">
       <li class="todo clearfix" ng-repeat="todo in incompleteTodos" ug-hover>
         <div class="label">{{todo.label}}</div>
-        <div class="content" ng-bind-html-unsafe="todo.content|markdown"></div>
+        <div class="content" ng-bind-html-unsafe="todo.content|markdown"></div> 
         <div class="actions">
-          <a href="#" ng-click="editTodo(todo)">edit</a> |
-          <a href="#" ng-click="completeTodo(todo, $index)">done</a>
+          <a href="#" ng-click="editTodo(todo)" prevent>edit</a> |
+          <a href="#" ng-click="completeTodo(todo, $index)" prevent>done</a>
         </div>
       </li>
     </ul>
