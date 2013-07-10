@@ -1,7 +1,53 @@
 <% content_for :angular do %>
+  <%# javascript_include_tag 'markdown' %>
   <%= javascript_include_tag 'angular/controllers/todo_ctrl' %>
 <% end %>
 
+
 <div ng-controller="TodoCtrl">
+
+
+  <!-- Form -->
+  <div class="span2">
+    <div class="todo-form">
+      <form name="newTodoForm">
+        <textarea name="content" rows="15"></textarea>
+        <br> 
+        <input type="text">
+        <br> 
+        <button class="btn">Create</button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- Incomplete todos -->
+  <div class="span4">
+    <h2>Your current todos</h2>
+    <ul class="todos">
+      <li class="todo clearfix">
+        <div class="label"></div>
+        <div class="content"></div> 
+        <div class="actions">
+          <a href="#">edit</a> |
+          <a href="#">done</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+  <!-- Complete Todos -->
+  <div class="span4">
+    <h2>Your completed todos</h2>
+    <ul class="todos">
+      <!-- complete class -->
+      <li class="todo clearfix">
+        <div class="label"></div>
+        <div class="content"></div>
+      </li>
+    </ul>
+  </div>
+
 
 </div>
